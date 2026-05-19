@@ -1,0 +1,27 @@
+import { BrowserRouter, Routes, Route } from 'react-router';
+import Login from './features/auth/pages/Login.jsx';
+import Register from './features/auth/pages/Register';
+
+// export const routes = BrowserRouter([
+//     {
+//         path:'/login',
+//         element:(<Login/>)
+
+//     },
+//     {
+//         path:'/register',
+//         element:(<Register/>)
+//     }
+// ])
+function AppRoutes(){
+    return(
+        <BrowserRouter>
+            <Routes>
+                <Route path='/login' element={<Login/>}/>
+                <Route path='/register' element={<Register/>}/>
+            </Routes>
+        </BrowserRouter>
+    )
+}
+
+export default AppRoutes
