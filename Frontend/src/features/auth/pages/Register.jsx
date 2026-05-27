@@ -1,47 +1,26 @@
-import React from 'react'
+import react from "react"
+import '../style/form.scss'
 import { Link } from 'react-router'
-import axios from 'axios';
-import { useState } from 'react';
-
 const Register = () => {
-
-    const [username, setUserName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    async function handleSubmit(e){
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-       
     }
-
     return (
         <main>
             <div className="form-container">
-                <h1>Register</h1>
+                <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
-                    <input
-                        onInput={(e) => { setUserName(e.target.value) }}
-                        type="text"
-                        name="username"
-                        placeholder=" Enter Username" />
-                    <input
-                        onInput={(e) => { setEmail(e.target.value) }}
-                        type="text"
-                        name="email"
-                        placeholder=" Enter Email" />
-                    <input
-                        onInput={(e) => { setPassword(e.target.value) }}
-                        type="password"
-                        name="password"
-                        placeholder=" Enter Password" />
-                    <button type="submit">Register</button>
-                </form>
+                    <input type="text" name="username" id="username" placeholder="Enter Username" />
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email" />
+                    <input type="password" name="password" id="email" placeholder="Enter Password" />
+                    <button className="button primary-button">Register</button>
+                                    <p>Already have an account? <Link to={"/login"}>login .</Link> </p>
 
-                <p>Already have an account? <Link className="toggleAuthForm" to="/login">Login</Link></p>
+                </form>
             </div>
         </main>
     )
+
 }
 
-export default Register
+export default Register;
